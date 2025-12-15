@@ -92,7 +92,7 @@ const HeroSection: React.FC = () => {
       
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-0 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
-         <span className="text-[10px] uppercase tracking-[0.3em] text-neutral-500 text-center pl-[0.3em]">Relatório Detalhado</span>
+         <span className="text-[10px] uppercase tracking-[0.3em] text-neutral-500 text-center mr-[-0.3em]">Relatório Detalhado</span>
          <ChevronDown className="w-5 h-5 text-gold animate-bounce" />
       </div>
 
