@@ -13,7 +13,7 @@ const PhaseTwoSection: React.FC = () => {
     {
       date: '19/12/2019',
       title: 'Tutela de Urgência',
-      description: 'Liminar concedida para suspender a exigibilidade do crédito e evitar protestos contra a empresa.',
+      description: 'Liminar concedida para suspender a exigibilidade do débito e evitar protestos contra a empresa.',
     },
     {
       date: '04/11/2021',

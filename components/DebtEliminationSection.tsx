@@ -72,7 +72,7 @@ const DebtEliminationSection: React.FC = () => {
 
           <ScrollReveal delay={1.0}>
             <p className="text-neutral-400 text-lg max-w-xl mx-auto mt-12 font-light">
-              O trânsito em julgado confirmou a tese da defesa, resultando na anulação completa do crédito tributário.
+              O trânsito em julgado confirmou a tese da defesa, resultando na anulação completa da dívida tributária.
             </p>
           </ScrollReveal>
 
