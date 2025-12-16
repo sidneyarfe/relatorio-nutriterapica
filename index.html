@@ -76,17 +76,29 @@
       }
       
       @media print {
+        @page {
+          margin: 0;
+          size: auto;
+        }
         body {
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
           background-color: #050505 !important;
+          color: #ffffff !important;
+          margin: 0;
         }
         .no-print {
           display: none !important;
         }
-        /* Ensure charts print clearly */
-        svg {
+        /* Ensure charts and graphics print clearly */
+        svg, img, div {
           break-inside: avoid;
+          page-break-inside: avoid;
+        }
+        /* Force background graphics on all elements */
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
         }
       }
     </style>

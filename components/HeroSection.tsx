@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => {
 
         {/* Unified Stats Dashboard - Replaces scattered cards for better organization */}
         <div className="w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-          <GlassCard className="p-0 overflow-hidden bg-neutral-900/40 backdrop-blur-2xl border-white/10">
+          <GlassCard className="!p-0 overflow-hidden bg-neutral-900/40 backdrop-blur-2xl border-white/10 w-full h-fit">
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
               
               {/* Stat 1: Processo */}

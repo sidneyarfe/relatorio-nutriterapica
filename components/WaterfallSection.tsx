@@ -33,7 +33,7 @@ const WaterfallSection: React.FC = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         <ScrollReveal>
              <SectionHeader 
-                title="A Jornada da Extinção" 
+                title="Como funcionou o abatimento da sua dívida" 
                 subtitle="Entenda visualmente como desmontamos a dívida passo a passo."
                 centered
             />
