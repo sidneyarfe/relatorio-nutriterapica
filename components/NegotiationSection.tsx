@@ -20,7 +20,7 @@ const NegotiationSection: React.FC = () => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <GlassCard className="p-10 border-gold/30 bg-gradient-to-br from-neutral-900/90 to-gold/5 overflow-hidden relative">
+          <GlassCard className="px-8 pt-10 pb-8 md:px-12 md:pt-12 md:pb-8 h-fit border-gold/30 bg-gradient-to-br from-neutral-900/90 to-gold/5 overflow-hidden relative">
             
             {/* Pulsing Status Indicator */}
             <div className="absolute top-6 right-6 flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 animate-pulse">

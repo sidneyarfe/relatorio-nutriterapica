@@ -40,10 +40,10 @@ const WaterfallSection: React.FC = () => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-            <GlassCard className="p-8 md:p-12 border-white/5 bg-neutral-900/40 backdrop-blur-3xl shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+            <GlassCard className="px-6 pt-8 pb-8 md:px-12 md:pt-12 md:pb-8 h-fit border-white/5 bg-neutral-900/40 backdrop-blur-3xl shadow-[0_0_50px_rgba(0,0,0,0.5)]">
                 
                 {/* Header Explicativo */}
-                <div className="flex items-center justify-between mb-16 border-b border-white/5 pb-6">
+                <div className="flex items-center justify-between mb-12 border-b border-white/5 pb-6">
                     <div>
                         <h3 className="text-white font-bold text-lg">Fluxo de Abatimento</h3>
                         <p className="text-neutral-500 text-sm">Acompanhe a redução do passivo em cada fase.</p>
