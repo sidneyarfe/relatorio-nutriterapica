@@ -10,7 +10,7 @@ const ValueAnchorSection: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <SectionHeader 
-            title="Quanto dinheiro você ia perder sem nossa ajuda?" 
+            title="Quanto dinheiro você ia perder sem nossa defesa?" 
             subtitle="Sem a atuação jurídica eficaz, a simples inércia e o tempo teriam duplicado essa dívida tributária injusta."
             centered
           />

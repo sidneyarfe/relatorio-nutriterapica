@@ -25,8 +25,8 @@ const FeeSection: React.FC = () => {
       <div className="max-w-5xl mx-auto relative z-10">
         <ScrollReveal>
           <SectionHeader 
-            title="Veja o retorno sobre o seu investimento" 
-            subtitle="Por conta da nossa atuação, conseguimos preservar R$ 3.802.629,48 do seu patrimônio que seriam subtraídos pela cobrança injusta do ISS."
+            title="Você investirá apenas R$400 mil para não perder +R$4.2 milhões"
+            subtitle="Resultando em proteção real de R$ 3.802.629,48 do seu patrimônio."
             centered
           />
         </ScrollReveal>
@@ -48,7 +48,7 @@ const FeeSection: React.FC = () => {
                         <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-neutral-300 shadow-inner">
                             <Wallet size={24} />
                         </div>
-                        <span className="text-xs font-bold text-neutral-500 uppercase tracking-[0.2em]">Custo do Serviço</span>
+                        <span className="text-xs font-bold text-neutral-500 uppercase tracking-[0.2em]">Investimento no Serviço</span>
                     </div>
 
                     <div className="space-y-2 relative z-10">
@@ -106,7 +106,7 @@ const FeeSection: React.FC = () => {
                                     className="h-full bg-neutral-700/80 border-r border-white/20 relative group cursor-help transition-all duration-1000 ease-out"
                                 >
                                     <div className="absolute inset-0 flex items-center justify-center">
-                                        <span className="text-[10px] font-bold text-white/90 bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">Custo</span>
+                                        <span className="text-[10px] font-bold text-white/90 bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">Investimento</span>
                                     </div>
                                 </div>
                                 
@@ -123,7 +123,7 @@ const FeeSection: React.FC = () => {
                                 <Check size={12} strokeWidth={3} />
                             </div>
                             <p className="text-neutral-300 text-sm leading-relaxed">
-                                O custo dos honorários representa apenas <strong className="text-white">~10,2%</strong> da economia real atualizada que foi garantida para a empresa.
+                                O investimento em honorários representa apenas <strong className="text-white">~10,2%</strong> da economia real atualizada que foi garantida para a empresa.
                             </p>
                         </div>
 

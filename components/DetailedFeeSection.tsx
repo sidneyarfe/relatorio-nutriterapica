@@ -7,25 +7,25 @@ import { Calculator, AlertCircle } from 'lucide-react';
 const DetailedFeeSection: React.FC = () => {
   const tableData = [
     {
-      item: "1. Êxito Processo Administrativo",
+      item: "1. Êxito Processo Administrativo - 3% do valor da causa administrativa",
       original: "R$ 35.823,49",
       correction: "R$ 26.089,49",
       total: "R$ 61.912,98"
     },
     {
-      item: "2. Pró-labore Judicial",
+      item: "2. Pró-labore Judicial - 10% do valor da causa judicial",
       original: "R$ 119.411,65",
       correction: "R$ 86.964,99",
       total: "R$ 206.376,64"
     },
     {
-      item: "3. Êxito Liminar",
+      item: "3. Êxito Liminar - 5% do valor da causa judicial",
       original: "R$ 59.705,82",
       correction: "R$ 43.482,50",
       total: "R$ 103.188,32"
     },
     {
-      item: "4. Êxito Proveito Econômico",
+      item: "4. Êxito Proveito Econômico - 5% do valor da causa judicial",
       original: "R$ 59.705,82",
       correction: "R$ 11.146,39",
       total: "R$ 70.852,21"
@@ -37,8 +37,8 @@ const DetailedFeeSection: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <SectionHeader 
-            title="Quanto a Nutriterápica deve a Dias Advocacia" 
-            subtitle="Valores referentes a atuação no processo administrativo e judicial."
+            title="Entenda como estão compostos nossos honorários" 
+            subtitle="Valores referentes a atuação do escritório no processo administrativo e judicial. Obs: Valor da causa administrativa (R$ 2.161.185,27); Valor da causa judicial (R$ 1.194.116,47)."
             centered
           />
         </ScrollReveal>
@@ -70,7 +70,7 @@ const DetailedFeeSection: React.FC = () => {
                   </div>
                   
                   <div className="col-span-3 flex justify-between md:block text-right">
-                    <span className="md:hidden text-xs text-neutral-500 uppercase">Correção</span>
+                    <span className="md:hidden text-xs text-neutral-500 uppercase">Correção (SELIC)</span>
                     <span className="text-neutral-400 font-mono text-sm">{row.correction}</span>
                   </div>
                   
@@ -97,7 +97,7 @@ const DetailedFeeSection: React.FC = () => {
             <div className="bg-black/40 px-4 py-3 border-t border-white/5 flex items-center justify-end">
                <div className="flex items-center gap-2 text-neutral-600 text-[10px]">
                  <AlertCircle size={10} />
-                 <span>Fonte: <strong className="text-neutral-500">Banco Central do Brasil - SELIC</strong></span>
+                 <span>Fonte: <strong className="text-neutral-500">Banco Central do Brasil - SELIC. OBS: Percentuais de correção utilizados (Taxa Selic): Período 12/11/2019 a 16/12/2025: Fator aplicado de 1,72827901 (representando acréscimo de 72,83%). Utilizado para: Êxito Administrativo, Pró-labore e Êxito Liminar. Período 01/08/2024 a 16/12/2025: Fator aplicado de 1,18668866 (representando acréscimo de 18,67%). Utilizado para: Êxito sobre Proveito Econômico.</strong></span>
                </div>
             </div>
           </GlassCard>

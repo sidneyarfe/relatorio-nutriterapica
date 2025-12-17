@@ -31,15 +31,15 @@ const DebtEliminationSection: React.FC = () => {
           <ScrollReveal delay={0.2}>
             <div className="relative inline-block group">
               <span className={`
-                text-4xl md:text-6xl font-light text-red-500/50 transition-all duration-1000
-                ${animate ? 'opacity-40 blur-[1px]' : 'opacity-100'}
+                text-4xl md:text-6xl font-light text-red-500 transition-all duration-1000
+                ${animate ? 'opacity-70' : 'opacity-100'}
               `}>
                 R$ 2.161.185,27
               </span>
               
               {/* Strikethrough Line Animation */}
               <div className={`
-                absolute top-1/2 left-0 h-1 bg-red-500 shadow-[0_0_15px_rgba(239,68,68,0.8)]
+                absolute top-1/2 left-0 h-1 bg-red-600 shadow-[0_0_15px_rgba(220,38,38,0.8)]
                 transition-all duration-[1.5s] ease-in-out delay-500
               `}
               style={{ width: animate ? '100%' : '0%' }}

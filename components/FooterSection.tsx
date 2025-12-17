@@ -25,14 +25,19 @@ const FooterSection: React.FC = () => {
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <button className="w-full md:w-auto group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-black transition-all duration-200 bg-gold rounded-full hover:bg-[#d4b075] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gold focus:ring-offset-black">
+          <a 
+            href="https://wa.me/5591981160842?text=Desejo%20regularizar%20os%20honor%C3%A1rios%20do%20caso%20Nutriter%C3%A1pica."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full md:w-auto group relative inline-flex items-center justify-center px-8 py-4 font-semibold text-black transition-all duration-200 bg-gold rounded-full hover:bg-[#d4b075] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gold focus:ring-offset-black"
+          >
             <span className="mr-2">Fale com o Sócio Responsável</span>
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </button>
+          </a>
 
           <button 
             onClick={handlePrint}
-            className="w-full md:w-auto inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-200 bg-neutral-800 border border-neutral-700 rounded-full hover:bg-neutral-700 focus:outline-none hover:border-gold/50"
+            className="w-full md:w-auto inline-flex items-center justify-center px-8 py-4 font-medium text-white transition-all duration-200 bg-neutral-800 border border-neutral-700 rounded-full hover:bg-neutral-700 focus:outline-none hover:border-gold/50 cursor-pointer"
           >
             <Download className="w-5 h-5 mr-2" />
             <span>Baixar Relatório (PDF)</span>

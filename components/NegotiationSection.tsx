@@ -22,12 +22,6 @@ const NegotiationSection: React.FC = () => {
         <ScrollReveal delay={0.2}>
           <GlassCard className="px-8 pt-10 pb-8 md:px-12 md:pt-12 md:pb-8 h-fit border-gold/30 bg-gradient-to-br from-neutral-900/90 to-gold/5 overflow-hidden relative">
             
-            {/* Pulsing Status Indicator */}
-            <div className="absolute top-6 right-6 flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 animate-pulse">
-                <div className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]"></div>
-                <span className="text-red-400 text-xs font-bold uppercase tracking-widest">Pendente</span>
-            </div>
-
             <div className="flex flex-col items-center text-center">
                 <div className="mb-6 p-4 rounded-full bg-gold/10 text-gold border border-gold/20 shadow-[0_0_20px_rgba(197,160,101,0.15)]">
                     <AlertCircle size={32} />
@@ -42,7 +36,7 @@ const NegotiationSection: React.FC = () => {
                 </p>
 
                 <a 
-                    href="https://wa.me/" 
+                    href="https://wa.me/5591981160842?text=Desejo%20regularizar%20os%20honor%C3%A1rios%20do%20caso%20Nutriter%C3%A1pica." 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold hover:bg-[#d4b075] text-black font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(197,160,101,0.3)] hover:shadow-[0_0_30px_rgba(197,160,101,0.5)]"
