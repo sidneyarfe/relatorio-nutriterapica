@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import HeroSection from './components/HeroSection';
 import StrategySection from './components/StrategySection';
 import OriginSection from './components/OriginSection';
@@ -12,44 +12,55 @@ import ValueAnchorSection from './components/ValueAnchorSection';
 import FeeSection from './components/FeeSection';
 import DetailedFeeSection from './components/DetailedFeeSection';
 import NegotiationSection from './components/NegotiationSection';
+import PasswordGate from './components/PasswordGate';
 
 const App: React.FC = () => {
+  const [isUnlocked, setIsUnlocked] = useState(false);
+
+  // Load unlock state from session if needed, or keep it fresh
+  const handleUnlock = () => {
+    setIsUnlocked(true);
+    // Scroll a bit after unlock to show content
+    setTimeout(() => {
+      window.scrollBy({ top: 200, behavior: 'smooth' });
+    }, 100);
+  };
+
   return (
     <main className="w-full bg-background min-h-screen text-white selection:bg-gold/30 selection:text-white">
       <HeroSection />
       
-      {/* Narrative Order: Origin (Problem) -> Financial X-Ray (Context) -> Strategy (Plan) -> Phases (Execution) */}
-      
-      <div className="bg-[#080808]">
-        <OriginSection />
-      </div>
+      {!isUnlocked ? (
+        <PasswordGate onUnlock={handleUnlock} />
+      ) : (
+        <div className="animate-fade-in-up">
+          <div className="bg-[#080808]">
+            <OriginSection />
+          </div>
 
-      {/* Financial Breakdown now appears before the strategy to establish context */}
-      <FinancialSection />
+          <FinancialSection />
 
-      <div className="bg-gradient-to-b from-[#080808] to-[#111111]">
-        <StrategySection />
-        <PhaseOneSection />
-      </div>
+          <div className="bg-gradient-to-b from-[#080808] to-[#111111]">
+            <StrategySection />
+            <PhaseOneSection />
+          </div>
 
-      <div className="bg-[#111111]">
-        <PhaseTwoSection />
-      </div>
-      
-      {/* High Impact Zero Section First, then the Waterfall Explaining HOW, then Anchor/Context */}
-      <DebtEliminationSection />
-      <WaterfallSection />
-      
-      <ValueAnchorSection />
-      
-      {/* Detailed breakdown of debts before the generic fee explanation */}
-      <DetailedFeeSection />
-      
-      {/* New Fee Section illustrating the cost vs benefit */}
-      <FeeSection />
+          <div className="bg-[#111111]">
+            <PhaseTwoSection />
+          </div>
+          
+          <DebtEliminationSection />
+          <WaterfallSection />
+          
+          <ValueAnchorSection />
+          
+          <DetailedFeeSection />
+          
+          <FeeSection />
 
-      {/* Call to Action for Negotiation */}
-      <NegotiationSection />
+          <NegotiationSection />
+        </div>
+      )}
       
       <FooterSection />
     </main>

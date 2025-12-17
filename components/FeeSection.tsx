@@ -25,7 +25,7 @@ const FeeSection: React.FC = () => {
       <div className="max-w-5xl mx-auto relative z-10">
         <ScrollReveal>
           <SectionHeader 
-            title="Você investirá apenas R$400 mil para não perder +R$4.2 milhões"
+            title="Você investe apenas R$442 mil por não ter perdido +R$4.2 milhões"
             subtitle="Resultando em proteção real de R$ 3.802.629,48 do seu patrimônio."
             centered
           />
