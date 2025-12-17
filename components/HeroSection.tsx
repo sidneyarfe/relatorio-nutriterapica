@@ -27,11 +27,20 @@ const HeroSection: React.FC = () => {
         <div className="text-center space-y-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           
           {/* Brand Logo */}
-          <div className="mb-6 flex justify-center">
+          <div className="mb-8 flex justify-center">
             <img 
-              src="https://imgur.com/a/bW0btd5" 
+              src="https://i.postimg.cc/fTbT27SV/DA-LOGO-2-(2).png" 
               alt="Dias Advocacia" 
-              className="h-24 md:h-32 w-auto object-contain drop-shadow-[0_0_25px_rgba(197,160,101,0.2)] opacity-90 hover:opacity-100 transition-opacity"
+              referrerPolicy="no-referrer"
+              className="h-12 md:h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(197,160,101,0.15)] opacity-80 hover:opacity-100 transition-all duration-500"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                // Fallback elegante caso a imagem não carregue
+                if (target.parentElement) {
+                    target.parentElement.innerHTML = '<div class="flex flex-col items-center justify-center px-6 py-4 border border-white/10 rounded-xl bg-white/5 backdrop-blur-md"><span class="text-2xl md:text-3xl font-bold text-white tracking-[0.2em] font-serif">DIAS</span><span class="text-xs text-gold uppercase tracking-[0.4em] mt-1">Advocacia</span></div>';
+                }
+              }}
             />
           </div>
 
