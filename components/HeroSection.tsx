@@ -1,10 +1,15 @@
 import React from 'react';
 import GlassCard from './GlassCard';
-import { Scale, FileText, CheckCircle2, ChevronDown } from 'lucide-react';
+import { Scale, FileText, CheckCircle2, ChevronDown, Lock } from 'lucide-react';
 
-const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  isUnlocked?: boolean;
+  children?: React.ReactNode;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ isUnlocked = false, children }) => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-10 overflow-hidden bg-[#050505] selection:bg-gold/30">
+    <section className={`relative flex flex-col items-center justify-center px-4 py-10 overflow-hidden bg-[#050505] selection:bg-gold/30 ${isUnlocked ? 'min-h-[90vh]' : 'min-h-screen'}`}>
       
       {/* Dynamic Background */}
       <div className="absolute inset-0 w-full h-full">
@@ -21,7 +26,7 @@ const HeroSection: React.FC = () => {
          />
       </div>
 
-      <div className="relative z-10 w-full max-w-5xl flex flex-col items-center gap-12 md:gap-16">
+      <div className="relative z-10 w-full max-w-5xl flex flex-col items-center gap-10 md:gap-12">
         
         {/* Main Title Block */}
         <div className="text-center space-y-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
@@ -36,7 +41,6 @@ const HeroSection: React.FC = () => {
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';
-                // Fallback elegante caso a imagem não carregue
                 if (target.parentElement) {
                     target.parentElement.innerHTML = '<div class="flex flex-col items-center justify-center px-6 py-4 border border-white/10 rounded-xl bg-white/5 backdrop-blur-md"><span class="text-2xl md:text-3xl font-bold text-white tracking-[0.2em] font-serif">DIAS</span><span class="text-xs text-gold uppercase tracking-[0.4em] mt-1">Advocacia</span></div>';
                 }
@@ -53,58 +57,78 @@ const HeroSection: React.FC = () => {
             </h1>
           </div>
 
-          <p className="max-w-2xl mx-auto text-neutral-400 text-lg md:text-xl font-light leading-relaxed">
-            Relatório de êxito referente à anulação integral de débito fiscal municipal e defesa patrimonial.
-          </p>
+          {isUnlocked && (
+            <p className="max-w-2xl mx-auto text-neutral-400 text-lg md:text-xl font-light leading-relaxed">
+              Relatório de êxito referente à anulação integral de débito fiscal municipal e defesa patrimonial.
+            </p>
+          )}
         </div>
 
-        {/* Unified Stats Dashboard - Replaces scattered cards for better organization */}
+        {/* Password Gate Area (Appears right after description when locked) */}
+        {children && (
+          <div className="w-full max-w-md opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            {children}
+          </div>
+        )}
+
+        {/* Unified Stats Dashboard - Censored with blur if not unlocked */}
         <div className="w-full opacity-0 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-          <GlassCard className="!p-0 overflow-hidden bg-neutral-900/40 backdrop-blur-2xl border-white/10 w-full h-fit">
-            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
-              
-              {/* Stat 1: Processo */}
-              <div className="p-8 flex flex-col items-center justify-center text-center group hover:bg-white/5 transition-colors">
-                 <div className="mb-4 p-3 rounded-full bg-neutral-800/50 text-neutral-400 group-hover:text-white group-hover:scale-110 transition-all">
-                    <FileText size={20} />
-                 </div>
-                 <p className="text-xs uppercase tracking-widest text-neutral-500 font-bold mb-2">Processo</p>
-                 <p className="text-sm md:text-base text-white font-mono tracking-wide">0867160-51.2015.8.14.0301</p>
-              </div>
+          <div className="relative group">
+            <GlassCard className={`!p-0 overflow-hidden bg-neutral-900/40 backdrop-blur-2xl border-white/10 w-full h-fit transition-all duration-700 ${!isUnlocked ? 'filter blur-md grayscale pointer-events-none select-none opacity-40' : ''}`}>
+              <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                
+                {/* Stat 1: Processo */}
+                <div className="p-8 flex flex-col items-center justify-center text-center group hover:bg-white/5 transition-colors">
+                   <div className="mb-4 p-3 rounded-full bg-neutral-800/50 text-neutral-400">
+                      <FileText size={20} />
+                   </div>
+                   <p className="text-xs uppercase tracking-widest text-neutral-500 font-bold mb-2">Processo</p>
+                   <p className="text-sm md:text-base text-white font-mono tracking-wide">0867160-51.2015.8.14.0301</p>
+                </div>
 
-              {/* Stat 2: Valor Original */}
-              <div className="p-8 flex flex-col items-center justify-center text-center group hover:bg-white/5 transition-colors relative overflow-hidden">
-                 <div className="mb-4 p-3 rounded-full bg-neutral-800/50 text-neutral-400 group-hover:text-red-400 group-hover:scale-110 transition-all">
-                    <Scale size={20} />
-                 </div>
-                 <p className="text-xs uppercase tracking-widest text-neutral-500 font-bold mb-2">Débito Original</p>
-                 <p className="text-xl md:text-2xl text-white font-semibold relative z-10">R$ 2.161.185,27</p>
-              </div>
+                {/* Stat 2: Valor Original */}
+                <div className="p-8 flex flex-col items-center justify-center text-center group hover:bg-white/5 transition-colors relative overflow-hidden">
+                   <div className="mb-4 p-3 rounded-full bg-neutral-800/50 text-neutral-400">
+                      <Scale size={20} />
+                   </div>
+                   <p className="text-xs uppercase tracking-widest text-neutral-500 font-bold mb-2">Débito Original</p>
+                   <p className="text-xl md:text-2xl text-white font-semibold relative z-10">R$ 2.161.185,27</p>
+                </div>
 
-              {/* Stat 3: Resultado (Highlighted) */}
-              <div className="p-8 flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                 {/* Subtle Gold Gradient Background for this cell */}
-                 <div className="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                 
-                 <div className="mb-4 p-3 rounded-full bg-gold/10 text-gold group-hover:scale-110 transition-all shadow-[0_0_20px_rgba(197,160,101,0.2)]">
-                    <CheckCircle2 size={20} />
-                 </div>
-                 <p className="text-xs uppercase tracking-widest text-gold font-bold mb-2">Resultado Final</p>
-                 <div className="flex flex-col items-center">
-                    <p className="text-3xl md:text-4xl text-white font-bold drop-shadow-lg">R$ 0,00</p>
-                    <p className="text-sm font-medium text-gold/80 mt-1 uppercase tracking-wider">débitos a pagar</p>
+                {/* Stat 3: Resultado */}
+                <div className="p-8 flex flex-col items-center justify-center text-center relative overflow-hidden group">
+                   <div className="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                   <div className="mb-4 p-3 rounded-full bg-gold/10 text-gold shadow-[0_0_20px_rgba(197,160,101,0.2)]">
+                      <CheckCircle2 size={20} />
+                   </div>
+                   <p className="text-xs uppercase tracking-widest text-gold font-bold mb-2">Resultado Final</p>
+                   <div className="flex flex-col items-center">
+                      <p className="text-3xl md:text-4xl text-white font-bold drop-shadow-lg">R$ 0,00</p>
+                      <p className="text-sm font-medium text-gold/80 mt-1 uppercase tracking-wider">débitos a pagar</p>
+                   </div>
+                </div>
+              </div>
+            </GlassCard>
+
+            {/* Restricted Label Overlay when locked */}
+            {!isUnlocked && (
+              <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+                 <div className="flex items-center gap-2 bg-black/60 backdrop-blur-md border border-white/10 px-6 py-3 rounded-full text-white/50 text-xs font-bold uppercase tracking-[0.3em]">
+                   <Lock size={14} className="text-gold" />
+                   Informações Restritas
                  </div>
               </div>
-
-            </div>
-          </GlassCard>
+            )}
+          </div>
         </div>
         
-        {/* Scroll Indicator - Now strictly aligned with the content stack */}
-        <div className="flex flex-col items-center gap-3 opacity-0 animate-fade-in-up mt-4 md:mt-8" style={{ animationDelay: '1.2s' }}>
-           <span className="text-[10px] uppercase tracking-[0.3em] text-neutral-500 text-center mr-[-0.3em]">Relatório Detalhado</span>
-           <ChevronDown className="w-5 h-5 text-gold animate-bounce" />
-        </div>
+        {/* Scroll Indicator */}
+        {isUnlocked && (
+          <div className="flex flex-col items-center gap-3 opacity-0 animate-fade-in-up mt-4" style={{ animationDelay: '1s' }}>
+             <span className="text-[10px] uppercase tracking-[0.3em] text-neutral-500 text-center mr-[-0.3em]">Relatório Detalhado</span>
+             <ChevronDown className="w-5 h-5 text-gold animate-bounce" />
+          </div>
+        )}
 
       </div>
 

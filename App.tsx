@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import HeroSection from './components/HeroSection';
 import StrategySection from './components/StrategySection';
 import OriginSection from './components/OriginSection';
@@ -17,22 +17,21 @@ import PasswordGate from './components/PasswordGate';
 const App: React.FC = () => {
   const [isUnlocked, setIsUnlocked] = useState(false);
 
-  // Load unlock state from session if needed, or keep it fresh
   const handleUnlock = () => {
     setIsUnlocked(true);
-    // Scroll a bit after unlock to show content
+    // Pequeno atraso para o scroll suave após a animação de entrada do conteúdo
     setTimeout(() => {
-      window.scrollBy({ top: 200, behavior: 'smooth' });
-    }, 100);
+      window.scrollBy({ top: 300, behavior: 'smooth' });
+    }, 300);
   };
 
   return (
     <main className="w-full bg-background min-h-screen text-white selection:bg-gold/30 selection:text-white">
-      <HeroSection />
+      <HeroSection isUnlocked={isUnlocked}>
+        {!isUnlocked && <PasswordGate onUnlock={handleUnlock} />}
+      </HeroSection>
       
-      {!isUnlocked ? (
-        <PasswordGate onUnlock={handleUnlock} />
-      ) : (
+      {isUnlocked && (
         <div className="animate-fade-in-up">
           <div className="bg-[#080808]">
             <OriginSection />
