@@ -26,10 +26,13 @@ const HeroSection: React.FC = () => {
         {/* Main Title Block */}
         <div className="text-center space-y-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           
-          {/* Brand Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md shadow-lg mb-4 hover:border-gold/30 transition-colors cursor-default">
-            <span className="w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(197,160,101,0.8)] animate-pulse" />
-            <span className="text-xs md:text-sm font-medium text-gold tracking-[0.2em] uppercase">Dias Advocacia</span>
+          {/* Brand Logo */}
+          <div className="mb-6 flex justify-center">
+            <img 
+              src="https://imgur.com/a/bW0btd5" 
+              alt="Dias Advocacia" 
+              className="h-24 md:h-32 w-auto object-contain drop-shadow-[0_0_25px_rgba(197,160,101,0.2)] opacity-90 hover:opacity-100 transition-opacity"
+            />
           </div>
 
           {/* Titles */}
