@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dias Advocacia | Relatório Nutriterápica</title>
+    <title>Dias Advocacia | Relatórios Premium</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -60,7 +60,6 @@
         font-family: 'Inter', sans-serif;
         overflow-x: hidden;
       }
-      /* Custom Scrollbar for Webkit */
       ::-webkit-scrollbar {
         width: 8px;
       }
@@ -80,12 +79,8 @@
         -webkit-backdrop-filter: blur(40px);
         border: 1px solid rgba(197, 160, 101, 0.3);
       }
-      
       @media print {
-        @page {
-          margin: 0;
-          size: auto;
-        }
+        @page { margin: 0; size: auto; }
         body {
           -webkit-print-color-adjust: exact !important;
           print-color-adjust: exact !important;
@@ -93,19 +88,8 @@
           color: #ffffff !important;
           margin: 0;
         }
-        .no-print {
-          display: none !important;
-        }
-        /* Ensure charts and graphics print clearly */
-        svg, img, div {
-          break-inside: avoid;
-          page-break-inside: avoid;
-        }
-        /* Force background graphics on all elements */
-        * {
-          -webkit-print-color-adjust: exact !important;
-          print-color-adjust: exact !important;
-        }
+        .no-print { display: none !important; }
+        * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       }
     </style>
   <script type="importmap">
@@ -114,6 +98,7 @@
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^6.22.3",
     "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
     "recharts": "https://esm.sh/recharts@^3.6.0",
     "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
