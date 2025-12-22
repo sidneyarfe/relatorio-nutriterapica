@@ -6,6 +6,7 @@ import ContextSection from './sections/ContextSection';
 import StrategySection from './sections/StrategySection';
 import TimelineSection from './sections/TimelineSection';
 import BenefitsSection from './sections/BenefitsSection';
+import ValueAnchorSection from './sections/ValueAnchorSection';
 import FeesSection from './sections/FeesSection';
 import FeeImpactSection from './sections/FeeImpactSection';
 import NegotiationSection from './sections/NegotiationSection';
@@ -38,6 +39,7 @@ const JCMoreiraReport: React.FC = () => {
           <StrategySection />
           <TimelineSection />
           <BenefitsSection />
+          <ValueAnchorSection />
           <FeesSection />
           <FeeImpactSection />
           <NegotiationSection />
