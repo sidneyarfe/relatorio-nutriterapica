@@ -23,14 +23,14 @@ const TimelineSection: React.FC = () => {
     },
     { 
       date: "09/07/2025", 
-      title: "Acórdão TJPA", 
-      desc: "Vitória unânime no Tribunal. Desembargadores confirmam a tese de decadência e anulam a autuação.", 
+      title: "TJPA Nega o Agravo do Estado", 
+      desc: "Desembargadores acolhem nossas contrarrazões para negar o agravo do estado, mantendo a liminar e suspendendo a autuação.", 
       highlight: true 
     },
     { 
       date: "25/08/2025", 
-      title: "Trânsito em Julgado", 
-      desc: "A decisão do Tribunal torna-se definitiva e irreversível, extinguindo o crédito tributário indevido." 
+      title: "Processo Volta ao 1° para Julgamento do Mérito da Ação", 
+      desc: "Agora cabe ao juiz da 3° Vara de Execuções Fiscais julgar o direito e as provas para decidir se assiste razão à J C Moreira." 
     },
   ];
 

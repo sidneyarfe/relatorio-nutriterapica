@@ -8,7 +8,7 @@ import { Ban, CheckCircle, FileCheck, PackageX } from 'lucide-react';
 const BenefitsSection: React.FC = () => {
   const benefits = [
     { icon: <Ban size={24} />, text: "Suspensão total da cobrança de R$ 894k." },
-    { icon: <FileCheck size={24} />, text: "Retirada imediata de protestos em cartório." },
+    { icon: <FileCheck size={24} />, text: "Suspensão imediata de protestos em cartório." },
     { icon: <PackageX size={24} />, text: "Proibição de apreensão pela SEFA-PA." },
     { icon: <CheckCircle size={24} />, text: "Regularidade fiscal plena para operar." },
   ];
