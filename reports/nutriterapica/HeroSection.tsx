@@ -43,7 +43,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isUnlocked = false, children 
           <div className="space-y-2">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white">
               <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
-                Caso Nutriterápica
+                Caso Nutriterápica X Município de Belém
               </span>
             </h1>
           </div>

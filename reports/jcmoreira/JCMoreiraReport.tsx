@@ -8,6 +8,7 @@ import TimelineSection from './sections/TimelineSection';
 import BenefitsSection from './sections/BenefitsSection';
 import FeesSection from './sections/FeesSection';
 import FeeImpactSection from './sections/FeeImpactSection';
+import NegotiationSection from './sections/NegotiationSection';
 import NextStepsSection from './sections/NextStepsSection';
 import PasswordGate from '../nutriterapica/PasswordGate'; 
 import FooterSection from '../../components/FooterSection';
@@ -39,6 +40,7 @@ const JCMoreiraReport: React.FC = () => {
           <BenefitsSection />
           <FeesSection />
           <FeeImpactSection />
+          <NegotiationSection />
           <NextStepsSection />
           <FooterSection />
         </div>
