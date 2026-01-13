@@ -87,7 +87,7 @@ const DetailedFeeSection: React.FC = () => {
             <div className="bg-black/40 px-4 py-3 border-t border-white/5 flex items-center justify-end">
                <div className="flex items-center gap-2 text-neutral-600 text-[10px]">
                  <AlertCircle size={10} />
-                 <span>Fonte: <strong className="text-neutral-500">Banco Central do Brasil - SELIC.</strong></span>
+                 <span>Fonte: <strong className="text-neutral-500">Banco Central do Brasil - SELIC. Período 12/11/2019 a 16/12/2025: Fator aplicado de 1,72827901 (representando acréscimo de 72,83%). Utilizado para: Êxito Administrativo, Pró-labore e Êxito Liminar. Período 01/08/2024 a 16/12/2025: Fator aplicado de 1,18668866 (representando acréscimo de 18,67%). Utilizado para: Êxito sobre Proveito Econômico.</strong></span>
                </div>
             </div>
           </GlassCard>
