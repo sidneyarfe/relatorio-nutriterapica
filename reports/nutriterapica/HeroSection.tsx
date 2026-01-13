@@ -1,7 +1,7 @@
 
 import React from 'react';
 import GlassCard from '../../components/GlassCard';
-import { Scale, FileText, CheckCircle2, ChevronDown, Lock } from 'lucide-react';
+import { Scale, FileText, CheckCircle2, ChevronDown, Lock, ShieldCheck } from 'lucide-react';
 
 interface HeroSectionProps {
   isUnlocked?: boolean;
@@ -26,11 +26,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isUnlocked = false, children 
 
       <div className="relative z-10 w-full max-w-5xl flex flex-col items-center gap-10 md:gap-12">
         <div className="text-center space-y-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <div className="mb-8 flex justify-center">
+          <div className="mb-2 flex justify-center">
             <img 
               src="https://i.postimg.cc/fTbT27SV/DA-LOGO-2-(2).png" 
               alt="Dias Advocacia" 
-              className="h-10 md:h-12 w-auto object-contain drop-shadow-[0_0_15px_rgba(197,160,101,0.15)] opacity-80 hover:opacity-100 transition-all duration-500"
+              className="h-14 md:h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(197,160,101,0.15)] opacity-80 hover:opacity-100 transition-all duration-500"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';
@@ -39,6 +39,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isUnlocked = false, children 
                 }
               }}
             />
+          </div>
+
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/20 text-gold text-[10px] font-bold uppercase tracking-[0.3em]">
+            <ShieldCheck size={12} /> PROCESSO CONCLUÍDO COM SUCESSO
           </div>
 
           <div className="space-y-2">
