@@ -1,3 +1,4 @@
+
 import React from 'react';
 import GlassCard from '../../components/GlassCard';
 import { Scale, FileText, CheckCircle2, ChevronDown, Lock } from 'lucide-react';
@@ -29,7 +30,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isUnlocked = false, children 
             <img 
               src="https://i.postimg.cc/fTbT27SV/DA-LOGO-2-(2).png" 
               alt="Dias Advocacia" 
-              className="h-12 md:h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(197,160,101,0.15)] opacity-80 hover:opacity-100 transition-all duration-500"
+              className="h-10 md:h-12 w-auto object-contain drop-shadow-[0_0_15px_rgba(197,160,101,0.15)] opacity-80 hover:opacity-100 transition-all duration-500"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';

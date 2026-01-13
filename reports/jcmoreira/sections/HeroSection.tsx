@@ -15,10 +15,10 @@ const HeroSection: React.FC = () => {
           <img 
             src="https://i.postimg.cc/fTbT27SV/DA-LOGO-2-(2).png" 
             alt="Logo" 
-            className="h-12 w-auto mx-auto mb-12 opacity-80"
+            className="h-16 md:h-20 w-auto mx-auto mb-14 opacity-80"
           />
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/20 text-gold text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
-            <ShieldCheck size={12} /> Liminar Confirmada TJPA
+            <ShieldCheck size={12} /> PROCESSO CONCLUÍDO COM SUCESSO
           </div>
           <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-none">
             Caso J.C. Moreira <br className="hidden md:block" /> 
